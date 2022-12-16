@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.unab.app.models.Factura;
 @Repository
-public interface FacturaDAO extends CrudRepository<Factura, Long> {
+public interface FacturaDAO extends CrudRepository<Factura,Long> {
 	@Query("select f from Factura f join fetch f.cliente c where f.cliente.id =?1")
 	public List<Factura> fetchFacturaByIDCliente(Long id);
 }
